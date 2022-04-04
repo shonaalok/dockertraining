@@ -28,7 +28,6 @@
    35  docker container --help
    36  docker container ls
    37  docker conatiner stop --help
-   38  docker conatiner taop 7d20c8e6a242
    39  docker container stop 7d20c8e6a242
    40  docker container ls
    41  docker container ls -a
@@ -48,3 +47,4 @@
    55  docker image ls
    56  docker image rm nginx:latest 
    57  docker image ls 
+   58 docker container run -d --name sonam-mongo mongo
