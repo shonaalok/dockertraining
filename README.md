@@ -107,15 +107,11 @@ docker volume prune
    216  git clone https://github.com/arjunachari12/docker-demo-with-simple-python-app
   217  cd docker-demo-with-simple-python-app/
   218  ls
-  219  docker build -t my-python-project .
+  219  docker build -t my-python-project .  // create new image based on docker file
   220  docker image ls
-  221  clear
-  222  docker login
-  223  docker image ls
-  224  clear
-  225  docker image ls
-  226  docker tag my-python-project arjunachari12/python1-app
+  222  docker login // connect to docker hub and create a new repo
+  226  docker tag my-python-project sonamvashishth/python-app1 //tagged image with repo
   227  docker image ls
-  228  docker push arjunachari12/python1-app
-  docker tag  my-python-project sonamvashishth/python-app1:2.0.
-  docker push sonamvashishth/python-app1:2.0.
+  228  docker push arjunachari12/python1-app //pushed the docker image to docker hub (default tag latest)
+  docker tag  my-python-project sonamvashishth/python-app1:2.0.0  //pushed the docker image to docker hub
+  docker push sonamvashishth/python-app1:2.0.0//push the image with version 2.0.0 to docker hub
