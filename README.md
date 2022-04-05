@@ -83,4 +83,21 @@ docker commit --help
   104  docker container stats ee
   105  history
   106  docker container top ee
-
+  docker run -d --name topdemo ubuntu /usr/bin/top -b
+  docker attach topdemo
+  docker inspect -f "{{.Config.Env}}" ee // ee is container id
+  docker inspect -f "{{.Config}}" ee // ee is container id
+  docker run -it --name cpu1 cpus=".5" ubuntu /bin/bash
+docker run -it --cpu-period=100000 --cpu-quota=50000 ubuntu /bin/bash
+docker run -it --cpu-rt-runtime=950000 --ulimit rtprio=99 --cap-add=sys_nice  debian:jessie
+docker network ls
+docker network inspect bridge
+docker network create my-network
+docker run --name redis2 --network my-network -d redis
+docker network connect my-network 41f
+docker network disconnect my-network 41f
+docker volume prune
+ 230  docker volume create my-volume
+ docker volume rm 0e1032a04af199d1e2a364bf43090f754837b0609cd5324cdc33a38bc319040e
+  231  docker container run -d --name mysql -v my-volume -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+  232  docker container inspect mysql
