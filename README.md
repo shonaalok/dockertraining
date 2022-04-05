@@ -98,6 +98,8 @@ docker network connect my-network 41f
 docker network disconnect my-network 41f
 docker volume prune
  230  docker volume create my-volume
- docker volume rm 0e1032a04af199d1e2a364bf43090f754837b0609cd5324cdc33a38bc319040e
-  231  docker container run -d --name mysql -v my-volume -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
-  232  docker container inspect mysql
+  docker volume rm 0e1032a04af199d1e2a364bf43090f754837b0609cd5324cdc33a38bc319040e
+  docker container run -d --name mysql -v my-volume -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+  docker container inspect mysql
+  docker container run -d --name mysql2 -v my-sql-volume:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql 
+  docker container run --name nginx2 -d -p 8084:80 -v $(pwd):/usr/share/nginx/html nginx
