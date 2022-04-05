@@ -110,8 +110,18 @@ docker volume prune
   219  docker build -t my-python-project .  // create new image based on docker file
   220  docker image ls
   222  docker login // connect to docker hub and create a new repo
-  226  docker tag my-python-project sonamvashishth/python-app1 //tagged image with repo
+  226  docker tag my-python-project sonamvashishth/python1-app //tagged image with repo
   227  docker image ls
-  228  docker push arjunachari12/python1-app //pushed the docker image to docker hub (default tag latest)
+  228  docker push sonamvashishth/python1-app //pushed the docker image to docker hub (default tag latest)
   docker tag  my-python-project sonamvashishth/python-app1:2.0.0  //pushed the docker image to docker hub
   docker push sonamvashishth/python-app1:2.0.0//push the image with version 2.0.0 to docker hub
+
+  # same steps for go project
+# https://docs.docker.com/language/golang/build-images/
+   318  git clone https://github.com/olliefr/docker-gs-ping
+  319  cd docker-gs-ping/
+  320  docker build --tag docker-gs-ping .
+  321  docker image ls
+  322  docker tag docker-gs-ping sonamvashishth/python-app1:v1.0
+  323  docker image ls
+  324  docker push sonamvashishth/python-app1:v1.0
