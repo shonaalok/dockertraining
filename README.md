@@ -103,3 +103,19 @@ docker volume prune
   docker container inspect mysql
   docker container run -d --name mysql2 -v my-sql-volume:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql 
   docker container run --name nginx2 -d -p 8084:80 -v $(pwd):/usr/share/nginx/html nginx
+
+   216  git clone https://github.com/arjunachari12/docker-demo-with-simple-python-app
+  217  cd docker-demo-with-simple-python-app/
+  218  ls
+  219  docker build -t my-python-project .
+  220  docker image ls
+  221  clear
+  222  docker login
+  223  docker image ls
+  224  clear
+  225  docker image ls
+  226  docker tag my-python-project arjunachari12/python1-app
+  227  docker image ls
+  228  docker push arjunachari12/python1-app
+  docker tag  my-python-project sonamvashishth/python-app1:2.0.
+  docker push sonamvashishth/python-app1:2.0.
